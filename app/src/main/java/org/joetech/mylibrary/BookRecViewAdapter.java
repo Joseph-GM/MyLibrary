@@ -1,6 +1,7 @@
 package org.joetech.mylibrary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -56,7 +56,9 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, books.get(position).getName() + "Selected", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext, books.get(position).getName() + "Selected", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, BookActivity.class);
+                mContext.startActivity(intent);
             }
         });
 
